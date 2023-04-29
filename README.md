@@ -1,4 +1,4 @@
-# Movie-Ticket-Booking-System
+# Drama-Ticket-Booking-System
 
 ## Technologies Used:
 
