@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Update Drama</title>
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	rel="stylesheet" />
+<!-- MDB -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
+	rel="stylesheet" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css"
+	rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet">
+<style>
+body {
+	color: #444;
+	background: linear-gradient(to right bottom, #A9C9FF 0%, #FFBBEC 100%);
+	padding: 30px;
+}
+
+.form {
+	width: 800px;
+	padding: 50px;
+	background: white;
+}
+
+input {
+	border: 1px solid #000; width: 200px;
+	padding: 20px;
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+	<div allign="center">
+		<div class="jumbotron">
+			<div class="container">
+				<h1 class="display-4">Update Drama</h1>
+			</div>
+		</div>
+		<br />
+		<div class="form">
+			<form action="#" th:action="@{/save}" th:object="${Drama}"
+				method="post">
+				<div class="form-group">
+					<label for="inputDrama">Drama Id</label> <input type="text"
+						th:field="*{id}" class="form-control" id="inputDrama"
+						placeholder="Drama Id" readonly>
+				</div>
+				<div class="form-group">
+					<label for="inputDrama">Drama Name</label> <input type="text"
+						th:field="*{Dramaname}" class="form-control" id="inputDrama"
+						placeholder="Drama Name">
+				</div>
+				<div class="form-group">
+					<label for="inputDramaLink">Drama image link</label> <input
+						type="text" th:field="*{Dramaimg}" class="form-control"
+						id="inputDramaLink" placeholder="Link">
+				</div>
+				<div class="form-group">
+					<label for="inputgenre">Drama Genre</label> <input type="text"
+						th:field="*{Dramagenre}" class="form-control" id="inputgenre"
+						placeholder="Genre">
+				</div>
+				<div class="form-group">
+					<label for="inputDescription">Drama Description</label>
+					<textarea class="form-control" th:field="*{Dramadescription}"
+						id="inputDescription" placeholder="Description" rows="3"></textarea>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputrat4">Drama Rating</label> <input type="number"
+							th:field="*{Dramarating}" class="form-control" id="inputrat4"
+							placeholder="Drama rating">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputpr4">Parental Rating:</label> <input type="text"
+							th:field="*{parentalrating}" class="form-control" id="inputpr4"
+							placeholder="Parental Rating:">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="input4">Drama Price</label> <input type="number"
+							th:field="*{Dramaprice}" class="form-control" id="input4"
+							placeholder="Drama Price">
+					</div>
+				</div>
+				<div class="form-group"></div>
+				<button type="submit" class="btn btn-primary">Update Drama</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
